@@ -27,8 +27,18 @@ gem 'jbuilder', '~> 1.2'
 # bower to manage front end assests
 gem 'bower-rails'
 
+#preload angular templates because of rails 4 assets nonsense
+gem 'angular-rails-templates'
+
 #compile css
 gem 'sass', '3.2.19'
+
+gem "foreman"
+group :production, :staging do
+  gem "rails_12factor"
+  gem "rails_stdout_logging"
+  gem "rails_serve_static_assets"
+end
 
 #development Tests
 group :test, :development do
